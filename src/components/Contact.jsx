@@ -18,7 +18,7 @@ const Contact = () => {
       const formData = new FormData(formRef.current);
       const data = Object.fromEntries(formData.entries());
 
-      const response = await fetch(`https://formsubmit.co/ajax/${PERSON.email}`, {
+      const response = await fetch("https://formsubmit.co/ajax/061d7b4645bb0472788595d2d939a00d", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -119,10 +119,15 @@ const Contact = () => {
             onSubmit={handleSubmit}
             className="space-y-5 bg-white/5 p-8 rounded-2xl border border-white/10 shadow-2xl backdrop-blur-md"
           >
+            {/* Security and Formatting Fields */}
+            <input type="hidden" name="_honeypot" style={{ display: 'none' }} />
+            <input type="hidden" name="_subject" value="New Portfolio Message!" />
+            <input type="hidden" name="_template" value="table" />
+
             <div>
               <label className="block text-sm font-medium text-gray-400 mb-2">Name</label>
               <input 
-                name="user_name"
+                name="name"
                 required
                 type="text" 
                 className="w-full px-4 py-3 bg-black/50 border border-white/10 rounded-xl focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 text-white placeholder-gray-600 transition-all" 
@@ -132,7 +137,7 @@ const Contact = () => {
             <div>
               <label className="block text-sm font-medium text-gray-400 mb-2">Email</label>
               <input 
-                name="user_email"
+                name="email"
                 required
                 type="email" 
                 className="w-full px-4 py-3 bg-black/50 border border-white/10 rounded-xl focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 text-white placeholder-gray-600 transition-all" 
