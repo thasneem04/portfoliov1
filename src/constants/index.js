@@ -68,7 +68,8 @@ export const PROJECTS = [
   },
   {
     title: "Portfolio",
-    tech: "HTML, CSS, JS",
+    tech: "React.js, Tailwind CSS",
+    link: "https://portfoliov1-delta-three.vercel.app/",
     description: "Built a responsive personal portfolio to showcase projects and skills"
   }
 ];
